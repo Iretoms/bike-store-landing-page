@@ -7,6 +7,15 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
 }
 
-`
+body {
+    position: relative;
+    font-family: 'Mulish', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+`;
 
 export default GlobalStyles;
