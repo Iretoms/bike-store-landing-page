@@ -1,52 +1,58 @@
-import React from 'react';
-import Lottie from 'lottie-react'
-import HeroLottie from '../assets/lotties/heroLottie.json'
-import styled from 'styled-components';
-import { FaSearch } from 'react-icons/fa'
-import Button from './Button';
+import React, { useState } from "react";
+import Lottie from "lottie-react";
+import HeroLottie from "../assets/lotties/heroLottie.json";
+import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
+import Button from "./Button";
 
 const Hero = () => {
-    return (
-      <Section>
-        <Container>
-          <HeroText>
-            <h1>Your Bike Electric Update</h1>
-            <p>
-              Dummy text progressive, and affordable healthcare, accessible on
-              mobile and online for everyone
-            </p>
-            <form onSubmit={(e) => e.preventDefault()}>
-              <FaSearch />
-              <input type="text" placeholder="Search Bike or anything" />
-              <div className="button-container">
-                <Button type="submit" text="find" />
-              </div>
-            </form>
-          </HeroText>
-          <HeroImage>
-            <Lottie animationData={HeroLottie} />
-          </HeroImage>
-        </Container>
-      </Section>
-    );
+  const [bikeSearch, setBikeSearch] = useState("");
+  
+  return (
+    <Section>
+      <Container>
+        <HeroText>
+          <h1>Your Bike Electric Update</h1>
+          <p>
+            Dummy text progressive, and affordable healthcare, accessible on
+            mobile and online for everyone
+          </p>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <FaSearch />
+            <input
+              type="text"
+              placeholder="Search Bike or anything"
+              value={bikeSearch}
+              onChange={(e) => setBikeSearch(e.target.value)}
+            />
+            <div className="button-container">
+              <Button type="submit" text="find" />
+            </div>
+          </form>
+        </HeroText>
+        <HeroImage>
+          <Lottie animationData={HeroLottie} />
+        </HeroImage>
+      </Container>
+    </Section>
+  );
 };
 
-
 const Section = styled.section`
-width: 100%;
-min-height: 85vh;
-`
+  width: 100%;
+  min-height: 85vh;
+`;
 
-const Container =  styled.div`
-width: 70%;
-min-height: 75vh ;
-margin: 0 auto;
-display: flex;
-align-items: flex-end;
-article {
+const Container = styled.div`
+  width: 70%;
+  min-height: 75vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  article {
     width: 50%;
-}
-`
+  }
+`;
 
 const HeroText = styled.article`
   h1 {
@@ -87,19 +93,17 @@ const HeroText = styled.article`
       }
     }
     svg {
-        color: #c2cfe0;
-        position: absolute;
-        left: 1rem;
+      color: #c2cfe0;
+      position: absolute;
+      left: 1rem;
     }
     .button-container {
-        position: absolute;
-        right: 0.5rem;
+      position: absolute;
+      right: 0.5rem;
     }
   }
 `;
 
-const HeroImage = styled.article `
-
-`
+const HeroImage = styled.article``;
 
 export default Hero;
