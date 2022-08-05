@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
 body {
     position: relative;
     font-family: 'Mulish', sans-serif;
+    background-color: #fff;
 }
 
 a {
