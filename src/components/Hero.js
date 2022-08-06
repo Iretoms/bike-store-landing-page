@@ -45,7 +45,7 @@ const Section = styled.section`
 
 const Container = styled.div`
   width: 70%;
-  min-height: 75vh;
+  min-height: 70vh;
   margin: 0 auto;
   display: flex;
   align-items: flex-end;
@@ -61,7 +61,7 @@ const HeroText = styled.article`
     color: #233348;
     width: 80%;
     line-height: 3.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
   p {
     font-weight: 300;
@@ -69,7 +69,7 @@ const HeroText = styled.article`
     color: #7d7087;
     width: 90%;
     line-height: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
   form {
     position: relative;
