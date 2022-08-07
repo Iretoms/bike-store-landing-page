@@ -17,8 +17,10 @@ const BikeTypes = () => {
           </article>
         </Container>
       </Section>
-    );
-};
+    )
+}
+
+
 
 const Section = styled.section`
 min-height:100vh;

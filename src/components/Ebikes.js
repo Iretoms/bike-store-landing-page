@@ -81,7 +81,7 @@ const Ebikes = () => {
             <Card>
               <h4>Universal eBike Kit</h4>
               <div className="image-container">
-                <img src={brampoton} alt="brampoton" />
+                <img src={brampoton} alt="" />
               </div>
               <div className="price-order">
                 <div>
