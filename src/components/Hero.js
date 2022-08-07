@@ -80,9 +80,10 @@ const HeroText = styled.article`
       padding-left: 2.5rem;
       width: 100%;
       height: 3.5rem;
-      color: #c2cfe0;
+      color: #000;
       font-weight: 400;
       font-size: 0.9rem;
+      font-style: inherit;
       border-radius: 100px;
       border: 1px solid #c2cfe0;
       &:focus {

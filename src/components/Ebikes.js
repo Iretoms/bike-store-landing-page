@@ -12,8 +12,7 @@ import "swiper/css/navigation";
 
 const Ebikes = () => {
   return (
-    <>
-      <SwiperContainer>
+      <>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={10}
@@ -52,7 +51,7 @@ const Ebikes = () => {
             <Card>
               <h4>Brampoton eBike Kit</h4>
               <div className="image-container">
-                <img src={brampoton} alt="universal" />
+                <img src={brampoton} alt="brampoton" />
               </div>
               <div className="price-order">
                 <div>
@@ -82,7 +81,7 @@ const Ebikes = () => {
             <Card>
               <h4>Universal eBike Kit</h4>
               <div className="image-container">
-                <img src={brampoton} alt="universal" />
+                <img src={brampoton} alt="brampoton" />
               </div>
               <div className="price-order">
                 <div>
@@ -102,15 +101,11 @@ const Ebikes = () => {
             <BsArrowRight />
           </div>
         </NavButtons>
-      </SwiperContainer>
-    </>
+      </>
   );
 };
 
-const SwiperContainer = styled.div``;
-
 const Card = styled.div`
-  background-color: #eee;
   padding: 1.5rem;
   width: 23.9rem;
   height: 24.1rem;
