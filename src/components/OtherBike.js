@@ -16,8 +16,11 @@ const OtherBike = () => {
           spaceBetween={10}
           slidesPerView={1}
           breakpoints={{
-            1024: {
+            1300:{
               slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 3,
             },
             640: {
               slidesPerView: 1,
