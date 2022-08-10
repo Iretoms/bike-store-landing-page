@@ -48,6 +48,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 5rem;
+  @media screen and (max-width: 1200px) {
+    width: 85%;
+  }
 `;
 
 const Card = styled.article`

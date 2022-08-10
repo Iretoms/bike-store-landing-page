@@ -39,21 +39,25 @@ const Footer = () => {
 
 const MainFooter = styled.footer`
   width: 100%;
-  min-height: 70vh;
+  min-height: 60vh;
   background: #fcb72b;
   display: flex;
   align-items: center;
 `;
 
 const Container = styled.div`
-color: #fff;
-width: 70%;
-margin: 0 auto;
-display: flex;
-justify-content: space-between;
-article {
-    width:40%;
-}
+  color: #fff;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  article {
+    width: 40%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 85%;
+  }
 `;
 
 const FooterText = styled.article`

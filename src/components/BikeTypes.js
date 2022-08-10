@@ -28,17 +28,21 @@ width: 100%;
 `
 
 const Container = styled.div`
-width: 70%;
-margin: 0 auto;
-.other-types {
+  width: 70%;
+  margin: 0 auto;
+  .other-types {
     margin-top: 2rem;
     h4 {
-        color: #233348;
-        font-weight: 600;
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
+      color: #233348;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
     }
-}
-`
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 85%;
+  }
+`;
 
 export default BikeTypes;

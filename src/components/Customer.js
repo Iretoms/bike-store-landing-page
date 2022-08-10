@@ -23,6 +23,10 @@ const Container = styled.div`
   .swiper-pagination-bullet-active {
     background-color: #fff;
   }
+
+  @media screen and (max-width: 1200px) {
+    width: 85%;
+  }
 `;
 
 export default Customer;

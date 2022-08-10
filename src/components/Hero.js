@@ -52,6 +52,10 @@ const Container = styled.div`
   article {
     width: 50%;
   }
+
+  @media screen and (max-width: 1200px) {
+    width: 85%;
+  }
 `;
 
 const HeroText = styled.article`
