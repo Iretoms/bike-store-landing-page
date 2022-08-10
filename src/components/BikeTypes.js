@@ -43,6 +43,13 @@ const Container = styled.div`
   @media screen and (max-width: 1200px) {
     width: 85%;
   }
+
+  @media screen and (max-width: 875px) {
+    padding-top: 4rem;
+    .other-types {
+      margin-top: 4rem;
+    }
+  }
 `;
 
 export default BikeTypes;

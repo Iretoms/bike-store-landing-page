@@ -22,7 +22,7 @@ const Ebikes = () => {
               slidesPerView: 2,
             },
             640: {
-              slidesPerView: 1,
+              slidesPerView: 2,
             },
           }}
           navigation={{
@@ -138,6 +138,10 @@ const Card = styled.div`
       font-size: 1.2rem;
     }
   }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+  }
 `;
 
 const NavButtons = styled.div`
@@ -163,6 +167,10 @@ const NavButtons = styled.div`
   }
   .backNavigate {
     margin-right: 1rem;
+  }
+
+  @media screen and (max-width: 875px) {
+    display: none;
   }
 `;
 

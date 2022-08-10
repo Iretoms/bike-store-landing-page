@@ -66,6 +66,10 @@ const NavList = styled.ul`
       color: #233348;
     }
   }
+
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
 `;
 
 const MenuBar = styled.div`
@@ -99,6 +103,10 @@ const MenuBar = styled.div`
     span:nth-child(3) {
       transform: translateY(-9px) rotate(90deg);
     }
+  }
+
+  @media screen and (max-width: 875px) {
+    display: block;
   }
 `;
 

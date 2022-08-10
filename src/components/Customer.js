@@ -27,6 +27,10 @@ const Container = styled.div`
   @media screen and (max-width: 1200px) {
     width: 85%;
   }
+
+  @media screen and (max-width: 875px) {
+    padding-bottom: 3rem;
+  }
 `;
 
 export default Customer;

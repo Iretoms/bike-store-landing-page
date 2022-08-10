@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="logo-container">
             <Logo />
           </div>
-          <p >
+          <p>
             Trafalgar provides progressive, and affordable healthcare,
             accessible on mobile and online for everyone
           </p>
@@ -32,6 +32,7 @@ const Footer = () => {
             <li>How it works</li>
           </ul>
         </FooterLink>
+        <p className="copyright">&copy;eBike 2021. All rights reserved</p>
       </Container>
     </MainFooter>
   );
@@ -54,9 +55,25 @@ const Container = styled.div`
   article {
     width: 40%;
   }
+  .copyright {
+    display: none;
+  }
 
   @media screen and (max-width: 1200px) {
     width: 85%;
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    padding: 3rem 0;
+    article {
+      width: 80%;
+    }
+    .copyright {
+      margin-top: 1rem;
+      display: block;
+      text-align: center;
+    }
   }
 `;
 
@@ -68,37 +85,47 @@ const FooterText = styled.article`
       color: #ffbd37;
     }
     .e-bike {
-        color: #fff;
+      color: #fff;
     }
   }
-  p:nth-of-type(1){
+  p:nth-of-type(1) {
     font-weight: 300;
     font-size: 1.1rem;
     margin-bottom: 2rem;
   }
-  p:nth-of-type(2){
+  p:nth-of-type(2) {
     font-weight: 300;
     font-size: 1rem;
+  }
+
+  @media screen and (max-width: 875px) {
+    p:nth-of-type(2) {
+      display: none;
+    }
   }
 `;
 
 const FooterLink = styled.article`
-display: flex;
-justify-content: space-between;
-ul {
+  display: flex;
+  justify-content: space-between;
+  ul {
     list-style: none;
     li {
-        font-weight: 300;
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
     }
 
-    li:nth-of-type(1){
-        font-weight: 700;
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
+    li:nth-of-type(1) {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
     }
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+  }
+`;
 
 export default Footer;

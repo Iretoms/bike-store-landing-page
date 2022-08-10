@@ -127,79 +127,98 @@ const CustomerCarousel = () => {
 
 
 const CustomerCard = styled.div`
-width: 100%;
-height: 26.6rem;
-background-color: #fcb72b;
-border-radius: 10px;
-color: #fff;
-padding-top: 4rem;
-h1 {
+  width: 100%;
+  min-height: 26.6rem;
+  background-color: #fcb72b;
+  border-radius: 10px;
+  color: #fff;
+  padding-top: 4rem;
+  h1 {
     text-align: center;
     color: #fff;
     font-weight: 700;
     font-size: 2.2rem;
     margin-bottom: 0.5rem;
-}
-.line {
+  }
+  .line {
     width: 56px;
     height: 2px;
     background-color: #fff;
     margin: 0 auto 1.5rem;
-}
+  }
 
-
-`
+  @media screen and (max-width: 875px) {
+    padding-bottom:4rem;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+`;
 
 const Profile = styled.div`
-display: flex;
-align-items: center;
-gap: 3rem;
-width: 70%;
-margin:0 auto;
-.image-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 70%;
+  margin: 0 auto;
+  .image-section {
     width: 11.5rem;
     text-align: center;
     .customer-image {
-        margin-left: 1.5rem;
-        width: 8.8rem;
-        height: 8.8rem;
-        overflow: hidden;
-        border: 3px solid #fff;
-        border-radius: 50%;
-        img {
-            width: 100%;
-            height: 100%;
-        }
+      margin-left: 1.5rem;
+      width: 8.8rem;
+      height: 8.8rem;
+      overflow: hidden;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
     h3 {
-        font-size: 1.3rem;
-        color: #fff;
-        margin: 0.5rem 0 1rem ;
+      font-size: 1.3rem;
+      color: #fff;
+      margin: 0.5rem 0 1rem;
     }
     p {
-        font-weight: 400;
-        font-size: 1.1rem;
+      font-weight: 400;
+      font-size: 1.1rem;
     }
-}
+  }
 
-.text-section {
+  .text-section {
     width: 26.3rem;
     p {
-        font-weight: 400;
-        font-size: 1.1rem;
-        line-height: 30px;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 30px;
     }
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    gap: 1rem;
+
+    .text-section {
+      width: 100%;
+      text-align: center;
+    }
+  }
+`;
 
 const CarouselNav = styled.div`
-margin-top: 2rem;
-display: flex;
-gap: 2rem;
-justify-content: center;
-svg {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  svg {
     color: #fcb72b;
     font-size: 1.5rem;
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
+`;
 export default CustomerCarousel;

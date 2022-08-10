@@ -56,6 +56,13 @@ const Container = styled.div`
   @media screen and (max-width: 1200px) {
     width: 85%;
   }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    article {
+      width: 100%;
+    }
+  }
 `;
 
 const HeroText = styled.article`
@@ -105,6 +112,21 @@ const HeroText = styled.article`
     .button-container {
       position: absolute;
       right: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 875px) {
+    text-align: center;
+    h1 {
+      width: 100%;
+    }
+    p {
+      width: 100%;
+    }
+    form {
+      input {
+        font-size: 0.75rem;
+      }
     }
   }
 `;

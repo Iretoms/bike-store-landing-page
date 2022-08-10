@@ -51,6 +51,11 @@ const Container = styled.div`
   @media screen and (max-width: 1200px) {
     width: 85%;
   }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    padding: 3rem 0;
+  }
 `;
 
 const Card = styled.article`
@@ -82,6 +87,9 @@ const Card = styled.article`
       font-weight: 700;
       font-size: 1.2rem;
     }
+  }
+  @media screen and (max-width: 875px) {
+    width: 100%;
   }
 `;
 
@@ -115,6 +123,14 @@ const Text = styled.article`
     background-color: transparent;
     cursor: pointer;
     line-height: 60px;
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+    text-align: center;
+    button {
+      margin: 0 auto;
+    }
   }
 `;
 

@@ -23,7 +23,7 @@ const OtherBike = () => {
               slidesPerView: 3,
             },
             640: {
-              slidesPerView: 1,
+              slidesPerView: 2,
             },
           }}
           grabCursor={true}
@@ -97,6 +97,14 @@ const Card = styled.div`
     }
     h4 {
       color: #fcb72b;
+    }
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+    .bike-image {
+      width:100%;
+      height: 9rem;
     }
   }
 `;
