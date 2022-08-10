@@ -169,9 +169,6 @@ const NavButtons = styled.div`
     margin-right: 1rem;
   }
 
-  @media screen and (max-width: 875px) {
-    display: none;
-  }
 `;
 
 export default Ebikes;
