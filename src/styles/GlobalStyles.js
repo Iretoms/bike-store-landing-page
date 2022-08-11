@@ -11,6 +11,9 @@ body {
     position: relative;
     font-family: 'Mulish', sans-serif;
     background-color: #fff;
+    &.fixed {
+        overflow: hidden;
+    }
 }
 
 h1,h2,h3,h4 {

@@ -124,8 +124,9 @@ const HeroText = styled.article`
       width: 100%;
     }
     form {
+      width: 100%;
       input {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
       }
     }
   }

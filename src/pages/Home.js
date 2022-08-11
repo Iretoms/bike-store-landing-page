@@ -14,7 +14,7 @@ const Home = () => {
          <BikeTypes/>
          <HybridBikes/>
          <Customer/>
-         <Footer/>  
+         <Footer/> 
         </>
     );
 };

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,6 +11,11 @@ const Header = () => {
   const mobileNavHandler = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  mobileOpen
+    ? document.body.classList.add("fixed")
+    : document.body.classList.remove("fixed");
+
   return (
     <MainHeader>
       <Nav>
@@ -29,6 +36,7 @@ const Header = () => {
           <span></span>
           <span></span>
         </MenuBar>
+        <AnimatePresence>{mobileOpen && <MobileNav />}</AnimatePresence>
       </Nav>
     </MainHeader>
   );
@@ -73,6 +81,7 @@ const NavList = styled.ul`
 `;
 
 const MenuBar = styled.div`
+  z-index: 200;
   display: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -90,6 +99,9 @@ const MenuBar = styled.div`
   &.active {
     transition-delay: 0.8s;
     transform: rotate(45deg);
+    span {
+      background-color: #fff;
+    }
     span:nth-child(2) {
       width: 0;
     }
