@@ -47,11 +47,11 @@ const OtherBike = () => {
             <Card
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
               transition={{ staggerChildren: 0.5 }}
             >
               <div className="bike-image">
-                <img src={hybrid} alt="hybrid" />
+                <motion.img variants={imageAnimate} src={hybrid} alt="hybrid" />
               </div>
               <motion.h4 variants={textAnimate}>Fixie Bikes</motion.h4>
             </Card>
@@ -60,7 +60,7 @@ const OtherBike = () => {
             <Card
               initial="hide"
               whileInView={"show"}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 1 }}
               transition={{ staggerChildren: 0.5 }}
             >
               <div className="bike-image">

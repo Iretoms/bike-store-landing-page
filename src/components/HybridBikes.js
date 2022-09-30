@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { textAnimate, imageAnimate } from "../animation";
 import hybridBike from "../assets/svgs/hybridBikes.svg";
 import Button from "./Button";
 
@@ -7,27 +9,37 @@ const HybridBikes = () => {
   return (
     <Section>
       <Container>
-        <Card>
+        <Card
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
           <div className="image-container">
-            <img src={hybridBike} alt="" />
+            <motion.img variants={imageAnimate} src={hybridBike} alt="" />
           </div>
-          <div className="price-order">
+          <motion.div variants={textAnimate} className="price-order">
             <div>
               <p>price</p>
               <h4>$750.00</h4>
             </div>
             <Button type="" text="Order" />
-          </div>
+          </motion.div>
         </Card>
-        <Text>
-          <h1>Hybrid Bikes</h1>
-          <p>
+        <Text
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.h1 variants={textAnimate}>Hybrid Bikes</motion.h1>
+          <motion.p variants={textAnimate}>
             Dummy Text progressive, and affordable healthcare, accessible on
             mobile and online for everyone. To us, it's not just work. We take
             pride in the solutions we deliver
-          </p>
+          </motion.p>
           <div className="learn-more">
-            <button>Learn more</button>
+            <motion.button variants={textAnimate}>Learn more</motion.button>
           </div>
         </Text>
       </Container>
@@ -58,7 +70,7 @@ const Container = styled.div`
   }
 `;
 
-const Card = styled.article`
+const Card = styled(motion.article)`
   padding: 1.5rem;
   width: 23.9rem;
   height: 24.1rem;
@@ -93,7 +105,7 @@ const Card = styled.article`
   }
 `;
 
-const Text = styled.article`
+const Text = styled(motion.article)`
   width: 30rem;
   h1 {
     font-weight: 700;

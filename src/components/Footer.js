@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { textAnimate } from "../animation";
 import styled from "styled-components";
 import Logo from "./Logo";
 
@@ -6,33 +8,54 @@ const Footer = () => {
   return (
     <MainFooter>
       <Container>
-        <FooterText>
-          <div className="logo-container">
+        <FooterText
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.div variants={textAnimate} className="logo-container">
             <Logo />
-          </div>
-          <p>
+          </motion.div>
+          <motion.p variants={textAnimate}>
             Trafalgar provides progressive, and affordable healthcare,
             accessible on mobile and online for everyone
-          </p>
-          <p>&copy;eBike 2021. All rights reserved</p>
+          </motion.p>
+          <motion.p variants={textAnimate}>
+            &copy;eBike 2021. All rights reserved
+          </motion.p>
         </FooterText>
-        <FooterLink>
-          <ul>
+        <FooterLink
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.ul variants={textAnimate}>
             <li>Company</li>
             <li>Product</li>
             <li>Bike Type</li>
             <li>About Us</li>
             <li>Contact</li>
-          </ul>
-          <ul>
+          </motion.ul>
+          <motion.ul variants={textAnimate}>
             <li>Help</li>
             <li>Help center</li>
             <li>Contact support</li>
             <li>Instructions</li>
             <li>How it works</li>
-          </ul>
+          </motion.ul>
         </FooterLink>
-        <p className="copyright">&copy;eBike 2021. All rights reserved</p>
+        <motion.div
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.p variants={textAnimate} className="copyright">
+            &copy;eBike 2021. All rights reserved
+          </motion.p>
+        </motion.div>
       </Container>
     </MainFooter>
   );
@@ -77,7 +100,7 @@ const Container = styled.div`
   }
 `;
 
-const FooterText = styled.article`
+const FooterText = styled(motion.article)`
   .logo-container {
     margin-bottom: 1rem;
     .big-B {
@@ -105,7 +128,7 @@ const FooterText = styled.article`
   }
 `;
 
-const FooterLink = styled.article`
+const FooterLink = styled(motion.article)`
   display: flex;
   justify-content: space-between;
   ul {
