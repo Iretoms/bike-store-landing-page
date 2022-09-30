@@ -62,7 +62,7 @@ const Ebikes = () => {
           <Card
             initial="hide"
             whileInView={"show"}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 1 }}
             transition={{ staggerChildren: 0.5 }}
           >
             <motion.h4 variants={textAnimate}>Brampoton eBike Kit</motion.h4>
