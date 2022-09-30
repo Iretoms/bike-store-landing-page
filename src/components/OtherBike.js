@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import hybrid from '../assets/pngs/hybrid.png'
-
+import { motion } from "framer-motion";
+import { textAnimate, imageAnimate } from "../animation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/css";
@@ -16,7 +17,7 @@ const OtherBike = () => {
           spaceBetween={10}
           slidesPerView={1}
           breakpoints={{
-            1300:{
+            1300: {
               slidesPerView: 4,
             },
             1024: {
@@ -30,33 +31,48 @@ const OtherBike = () => {
           watchSlidesVisibility={true}
         >
           <SwiperSlide>
-            <Card>
+            <Card
+              initial="hide"
+              whileInView={"show"}
+              viewport={{ once: true, amount: 1 }}
+              transition={{ staggerChildren: 0.5 }}
+            >
+              <div variants={imageAnimate} className="bike-image">
+                <motion.img variants={imageAnimate} src={hybrid} alt="hybrid" />
+              </div>
+              <motion.h4 variants={textAnimate}>Hybrid Bike</motion.h4>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              initial="hide"
+              whileInView={"show"}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ staggerChildren: 0.5 }}
+            >
               <div className="bike-image">
                 <img src={hybrid} alt="hybrid" />
               </div>
-              <h4>Hybrid Bike</h4>
+              <motion.h4 variants={textAnimate}>Fixie Bikes</motion.h4>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              initial="hide"
+              whileInView={"show"}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ staggerChildren: 0.5 }}
+            >
+              <div className="bike-image">
+                <motion.img variants={imageAnimate} src={hybrid} alt="hybrid" />
+              </div>
+              <motion.h4 variants={textAnimate}>Folding Bikes</motion.h4>
             </Card>
           </SwiperSlide>
           <SwiperSlide>
             <Card>
               <div className="bike-image">
-                <img src={hybrid} alt="hybrid" />
-              </div>
-              <h4>Fixie Bikes</h4>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="bike-image">
-                <img src={hybrid} alt="hybrid" />
-              </div>
-              <h4>Folding Bikes</h4>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="bike-image">
-                <img src={hybrid} alt="hybrid" />
+                <motion.img variants={imageAnimate} src={hybrid} alt="hybrid" />
               </div>
               <h4>Mount Bikes</h4>
             </Card>
@@ -74,7 +90,7 @@ const OtherBike = () => {
     );
 };
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   width: 14.2rem;
   .bike-image {
     width: 14.2rem;
