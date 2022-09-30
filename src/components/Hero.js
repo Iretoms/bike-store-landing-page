@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { textAnimate, imageAnimate } from "../animation";
 import Lottie from "lottie-react";
 import HeroLottie from "../assets/lotties/heroLottie.json";
 import styled from "styled-components";
@@ -11,13 +13,23 @@ const Hero = () => {
   return (
     <Section>
       <Container>
-        <HeroText>
-          <h1>Your Bike Electric Update</h1>
-          <p>
+        <HeroText
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.h1 variants={textAnimate}>
+            Your Bike Electric Update
+          </motion.h1>
+          <motion.p variants={textAnimate}>
             Dummy text progressive, and affordable healthcare, accessible on
             mobile and online for everyone
-          </p>
-          <form onSubmit={(e) => e.preventDefault()}>
+          </motion.p>
+          <motion.form
+            variants={textAnimate}
+            onSubmit={(e) => e.preventDefault()}
+          >
             <FaSearch />
             <input
               type="text"
@@ -28,10 +40,17 @@ const Hero = () => {
             <div className="button-container">
               <Button type="submit" text="find" />
             </div>
-          </form>
+          </motion.form>
         </HeroText>
-        <HeroImage>
-          <Lottie animationData={HeroLottie} />
+        <HeroImage
+          initial="hide"
+          whileInView={"show"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.div variants={imageAnimate}>
+            <Lottie animationData={HeroLottie} />
+          </motion.div>
         </HeroImage>
       </Container>
     </Section>
@@ -65,7 +84,7 @@ const Container = styled.div`
   }
 `;
 
-const HeroText = styled.article`
+const HeroText = styled(motion.article)`
   h1 {
     font-weight: 700;
     font-size: 3rem;
@@ -132,6 +151,6 @@ const HeroText = styled.article`
   }
 `;
 
-const HeroImage = styled.article``;
+const HeroImage = styled(motion.article)``;
 
 export default Hero;

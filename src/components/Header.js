@@ -2,8 +2,24 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import MobileNav from "./MobileNav";
+
+const headerAnimation = {
+  hide: {
+    opacity: 0,
+    y: -100,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.2,
+      duration: 1.5,
+    },
+  },
+};
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -18,7 +34,7 @@ const Header = () => {
 
   return (
     <MainHeader>
-      <Nav>
+      <Nav variants={headerAnimation} initial="hide" animate="show">
         <div>
           <Link to="/">
             <Logo />
@@ -47,7 +63,7 @@ const MainHeader = styled.header`
   height: 15vh;
 `;
 
-const Nav = styled.nav`
+const Nav = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
   align-items: center;
